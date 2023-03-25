@@ -1,0 +1,39 @@
+
+package selenium;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class P_OPopration {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeOptions option = new ChromeOptions() ;
+		option.addArguments("--remote-allow-origins=*");
+    ChromeDriver driver = new ChromeDriver(option);
+       //  driver.manage().window().maximize();//give me error for this program 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    /*
+       //  driver.get("https:/demo.actitime.com/login.do");
+         driver.get("https://letcode.in/alert");
+         driver.findElement(By.id("accept")).click();
+         Thread.sleep(2000);
+         driver.switchTo().alert().accept();
+       */
+     
+        
+         driver.get("https://letcode.in/alert");
+         driver.findElement(By.id("confirm")).click();
+         Thread.sleep(2000);
+         driver.switchTo().alert().dismiss();
+      
+         
+         
+         
+         
+	}
+
+}
